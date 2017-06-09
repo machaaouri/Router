@@ -20,7 +20,9 @@ namespace Client
             try
             {
                 client = channelFactory.CreateChannel();
-                client.ChampWinner(1555);
+                string response = client.ChampWinner(1555);
+                Console.WriteLine(response);
+                Console.ReadKey();
                 ((ICommunicationObject)client).Close();
             }
             catch
@@ -30,6 +32,7 @@ namespace Client
                     ((ICommunicationObject)client).Abort();
                 }
             }
+            Console.ReadKey();
         }
     }
 }

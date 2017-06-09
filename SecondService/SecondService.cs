@@ -19,7 +19,9 @@ namespace SecondService
             // very odd to do this inside the constructor , but it's all about the load balancer not this service...
             try
             {
-                using (StreamReader file = new StreamReader("Resources/UEFA.json"))
+                string filePath = "../../UEFA.json";
+
+                using (StreamReader file = new StreamReader(filePath))
                 {
                     string winnersJson = file.ReadToEnd();
                     winners = JsonConvert.DeserializeObject<Dictionary<string, string>>(winnersJson);

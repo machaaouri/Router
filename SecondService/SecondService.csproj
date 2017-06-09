@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="UEFA.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IService\IService.csproj">
