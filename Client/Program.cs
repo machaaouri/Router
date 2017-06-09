@@ -20,9 +20,16 @@ namespace Client
             try
             {
                 client = channelFactory.CreateChannel();
-                string response = client.ChampWinner(1555);
-                Console.WriteLine(response);
-                Console.ReadKey();
+                Console.WriteLine("Enter a year");
+
+                do
+                {
+                    long year = long.Parse(Console.ReadLine());
+                    string response = client.ChampWinner(year);
+                    Console.WriteLine(response);
+                }
+                while (true);
+
                 ((ICommunicationObject)client).Close();
             }
             catch
