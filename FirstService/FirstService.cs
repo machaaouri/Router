@@ -36,7 +36,10 @@ namespace FirstService
 
         public string ChampWinner(long year)
         {
-            return "Real madrid";
+            String team;
+            winners.TryGetValue(year.ToString(), out team);
+
+            return (!String.IsNullOrEmpty(team) ? team : "Invalid year !");
         }
     }
 }

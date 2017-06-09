@@ -35,7 +35,10 @@ namespace SecondService
 
         public string ChampWinner(long year)
         {
-            throw new NotImplementedException();
+            String team;
+            winners.TryGetValue(year.ToString(), out team);
+
+            return (!String.IsNullOrEmpty(team) ? team : "Invalid year !");
         }
     }
 }
