@@ -17,7 +17,11 @@ namespace FirstService
 
         FirstService()
         {
-            // very odd to do this inside the constructor , but it's all about the load balancer not this service...
+            Seed();
+        }
+
+        private void Seed()
+        {
             try
             {
                 string filePath = "../../UEFA.json";
